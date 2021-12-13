@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">PMDM_T4_P4_FRM</string>
+    <string name="lblNombre">Escriba su apodo</string>
+    <string name="lblMasculino">Masculino</string>
+    <string name="lblFemenino">Femenino</string>
+    <string name="rbFemenino">Mujer</string>
+    <string name="rbMasculino">Hombre</string>
+    <string-array name="lista">
+        <item>@string/spSeleccion</item>
+        <item>@string/spEspecie1</item>
+        <item>@string/spEspecie2</item>
+        <item>@string/spEspecie3</item>
+        <item>@string/spEspecie4</item>
+    </string-array>
+    <string name = "spSeleccion">Selecciona una especie...</string>
+    <string name = "spEspecie1">Elf@</string>
+    <string name = "spEspecie2">Enan@</string>
+    <string name = "spEspecie3">Hobbit</string>
+    <string name = "spEspecie4">Human@</string>
+
+    <string-array name="lista2">
+        <item>@string/spSeleccion2</item>
+        <item>@string/spProfesion1</item>
+        <item>@string/spProfesion2</item>
+        <item>@string/spProfesion3</item>
+        <item>@string/spProfesion4</item>
+        <item>@string/spProfesion5</item>
+    </string-array>
+
+    <string name = "spSeleccion2">Selecciona una profesión...</string>
+    <string name = "spProfesion1">Arquero@</string>
+    <string name = "spProfesion2">Guerrer@</string>
+    <string name = "spProfesion3">Mag@</string>
+    <string name = "spProfesion4">Herrer@</string>
+    <string name = "spProfesion5">Miner@</string>
+
+</resources>
