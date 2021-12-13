@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String nombre, sexo, especie, profesion;
     ImageView imgAvatar, imgArma, imgVida, imgMagia, imgFuerza, imgVelocidad;
     ProgressBar vida, magia, fuerza, velocidad;
-    TextView min1, min2, min3, min4, max1, max2, max3,max4;
+    TextView min1, min2, min3, min4, max1, max2, max3,max4, txtNombre;
     int ruta, ruta2;
 
     @SuppressLint("WrongConstant")
@@ -48,11 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         min2 = findViewById(R.id.txtMin2);
         min3 = findViewById(R.id.txtMin3);
         min4 = findViewById(R.id.txtMin4);
-        min1 = findViewById(R.id.txtMax);
-        min2 = findViewById(R.id.txtMax2);
-        min3 = findViewById(R.id.txtMax3);
-        min4 = findViewById(R.id.txtMax4);
+        max1 = findViewById(R.id.txtMax);
+        max2 = findViewById(R.id.txtMax2);
+        max3 = findViewById(R.id.txtMax3);
+        max4 = findViewById(R.id.txtMax4);
 
+        txtNombre = findViewById(R.id.txtNombre);
 
     }
 
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.equals(btnAvatar)) {
             dialogNombre = new DialogNombre();
             dialogNombre.setCancelable(false);
-            dialogNombre.show(getSupportFragmentManager(), "Nuevo Diálogo");
+            dialogNombre.show(getSupportFragmentManager(), "Nombre");
         }
 
     }
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void guardarNombre(String nombreObtenido) {
         dialogSexo = new DialogSexo();
         dialogSexo.setCancelable(false);
-        dialogSexo.show(getSupportFragmentManager(), "Nombre Diálogo");
+        dialogSexo.show(getSupportFragmentManager(), "Nombre");
         nombre = nombreObtenido;
         System.out.println(nombre);
     }
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void guardarSexo(String sexoObtenido) {
         dialogEspecie = new DialogEspecie();
         dialogEspecie.setCancelable(false);
-        dialogEspecie.show(getSupportFragmentManager(), "Sexo Diálogo");
+        dialogEspecie.show(getSupportFragmentManager(), "Sexo");
         sexo = sexoObtenido;
         System.out.println(sexo);
 
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void guardarEspecie(String especieObtenida) {
         dialogProfesion = new DialogProfesion();
         dialogProfesion.setCancelable(false);
-        dialogProfesion.show(getSupportFragmentManager(), "Especie Diálogo");
+        dialogProfesion.show(getSupportFragmentManager(), "Especie");
         especie = especieObtenida;
         System.out.println(especie);
     }
@@ -99,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (nombre.length() != 0 && sexo.length() != 0 && especie.length() != 0 && profesion.length() != 0) {
             if (profesionObtenida.equals("Arquero@"))
             {
-                System.out.println("elfoooo");
                 ruta2 = R.drawable.ic_arquero;
             }
             else if (profesionObtenida.equals("Guerrer@"))
@@ -128,7 +128,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             int m = (int) (Math.random() * (10 - 0)) + 0;
             int f = (int) (Math.random() * (20 - 0)) + 0;
             int ve = (int) (Math.random() * (5 - 0)) + 0;
-            System.out.println("" + v + "-" + m + "-" + f + "-" + ve);
 
             vida.setProgress(v);
             magia.setProgress(m);
@@ -138,20 +137,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             imgVelocidad.setImageResource(R.drawable.ic_velocidad);
             imgVida.setImageResource(R.drawable.ic_corazon);
             imgMagia.setImageResource(R.drawable.ic_magia);
+            txtNombre.setText(nombre);
 
 
             min1.setVisibility(View.VISIBLE);
             min2.setVisibility(View.VISIBLE);
             min3.setVisibility(View.VISIBLE);
             min4.setVisibility(View.VISIBLE);
-            min1.setVisibility(View.VISIBLE);
-            min2.setVisibility(View.VISIBLE);
-            min3.setVisibility(View.VISIBLE);
-            min4.setVisibility(View.VISIBLE);
+            max1.setVisibility(View.VISIBLE);
+            max2.setVisibility(View.VISIBLE);
+            max3.setVisibility(View.VISIBLE);
+            max4.setVisibility(View.VISIBLE);
             vida.setVisibility(View.VISIBLE);
             magia.setVisibility(View.VISIBLE);
             fuerza.setVisibility(View.VISIBLE);
             velocidad.setVisibility(View.VISIBLE);
+            txtNombre.setVisibility(View.VISIBLE);
         }
     }
 
@@ -186,7 +187,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void crearAvatar() {
         if (nombre.length() != 0 && sexo.length() != 0 && especie.length() != 0 && profesion.length() != 0) {
             if (sexo.equals("Hombre") && especie.equals("Elf@")) {
-                System.out.println("elfoooo");
                 ruta = R.drawable.ic_elfo;
             } else if (sexo.equals("Mujer") && especie.equals("Elf@")) {
                 ruta = R.drawable.ic_elfa;
