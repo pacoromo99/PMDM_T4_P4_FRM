@@ -1,5 +1,6 @@
 package es.studium.pmdm_t4_p4_frm;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -25,20 +26,26 @@ public class DialogNombre extends DialogFragment
         View v = inflater.inflate(R.layout.dialogo_nombre, null);
         nombre = v.findViewById(R.id.edtNombre);
         builder.setView(v);
-        builder.setTitle("nombre Diálogo")
+        builder.setTitle(R.string.titulo1)
                 .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        dialog.dismiss();
-                        listener.guardarNombre(nombre.getText().toString());
+                        if(nombre.length()!=0) {
+                            dialog.dismiss();
+                            listener.guardarNombre(nombre.getText().toString());
+                        }
+                        else
+                            {
+                                Toast.makeText(v.getContext(), "Faltan datos", Toast.LENGTH_SHORT).show();
+                            }
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        listener.cancelar();
+                        listener.cancelarNombre();
                     }
                 });
         return builder.create();

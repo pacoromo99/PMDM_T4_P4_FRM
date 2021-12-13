@@ -24,20 +24,26 @@ public class DialogProfesion extends DialogFragment
         View v = inflater.inflate(R.layout.dialogo_profesion, null);
         builder.setView(v);
         spProfesion = v.findViewById(R.id.spProfesion);
-        builder.setTitle("Porfesion Diálogo")
+        builder.setTitle(R.string.titulo4)
                 .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        dialog.dismiss();
-                        listener.guardarProfesion(spProfesion.getSelectedItem().toString());
+                        if(spProfesion.getSelectedItemPosition()!=0) {
+                            dialog.dismiss();
+                            listener.guardarProfesion(spProfesion.getSelectedItem().toString());
+                        }
+                        else
+                            {
+                                Toast.makeText(v.getContext(), "Faltan datos", Toast.LENGTH_SHORT).show();
+                            }
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        listener.cancelar();
+                        listener.cancelarProfesion();
                     }
                 });
         return builder.create();

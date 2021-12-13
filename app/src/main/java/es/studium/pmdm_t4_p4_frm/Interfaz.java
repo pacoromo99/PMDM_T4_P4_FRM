@@ -7,5 +7,8 @@ public interface Interfaz
     public void guardarEspecie(String especie);
     public void guardarProfesion(String profesion);
 
-    public void cancelar();
+    public void cancelarNombre();
+    public void cancelarSexo();
+    public void cancelarEspecie();
+    public void cancelarProfesion();
 }

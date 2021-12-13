@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/drawable/ic_elfa.xml" value="0.24351851851851852" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/drawable/ic_elfo.xml" value="0.24351851851851852" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/drawable/ic_enana.xml" value="0.24351851851851852" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/drawable/ic_enano.xml" value="0.24351851851851852" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/drawable/ic_hombre.xml" value="0.24351851851851852" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/drawable/ic_mujer.xml" value="0.24351851851851852" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/layout-land/activity_main.xml" value="0.34010416666666665" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Paco/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/layout/dialogo_especie.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Studium/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Studium/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/layout/dialgo_sexo.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Studium/AndroidStudioProjects/PMDM_T4_P4_FRM/app/src/main/res/layout/dialogo_especie.xml" value="0.36666666666666664" />

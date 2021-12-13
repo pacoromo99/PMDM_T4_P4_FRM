@@ -26,14 +26,23 @@ public class DialogSexo extends DialogFragment
         masculino = v.findViewById(R.id.rbMasculino);
         femenino = v.findViewById(R.id.rbFemenino);
         builder.setView(v);
-        builder.setTitle("sexo Diálogo")
+        builder.setTitle(R.string.titulo2)
                 .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        dialog.dismiss();
-                        comprobarSexo();
-                        listener.guardarSexo(sexo);
+
+                        if(masculino.isChecked()==true||femenino.isChecked()==true)
+                        {
+
+                            comprobarSexo();
+                            listener.guardarSexo(sexo);
+                            dialog.dismiss();
+                        }
+                        else
+                            {
+                                Toast.makeText(v.getContext(), "Faltan datos", Toast.LENGTH_SHORT).show();
+                            }
 
                     }
                 })
@@ -41,7 +50,7 @@ public class DialogSexo extends DialogFragment
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        listener.cancelar();
+                        listener.cancelarSexo();
 
                     }
                 });

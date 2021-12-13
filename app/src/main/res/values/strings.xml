@@ -1,10 +1,11 @@
 <resources>
-    <string name="app_name">PMDM_T4_P4_FRM</string>
+    <string name="app_name">My Avatar</string>
     <string name="lblNombre">Escriba su apodo</string>
     <string name="lblMasculino">Masculino</string>
     <string name="lblFemenino">Femenino</string>
     <string name="rbFemenino">Mujer</string>
     <string name="rbMasculino">Hombre</string>
+    <string name="lblAvatar">Cree su Avatar...</string>
     <string-array name="lista">
         <item>@string/spSeleccion</item>
         <item>@string/spEspecie1</item>
@@ -33,5 +34,17 @@
     <string name = "spProfesion3">Mag@</string>
     <string name = "spProfesion4">Herrer@</string>
     <string name = "spProfesion5">Miner@</string>
+
+    <string name = "minAtributo">0</string>
+    <string name = "maxAtributo1">100</string>
+    <string name = "maxAtributo2">10</string>
+    <string name = "maxAtributo3">20</string>
+    <string name = "maxAtributo4">5</string>
+
+    <string name = "titulo3">Seleccione la Especie...</string>
+    <string name = "titulo4">Seleccione la profesión...</string>
+    <string name = "titulo2">Seleccione el Género...</string>
+    <string name = "titulo1">¿Cómo se llamará tu Avatar?</string>
+
 
 </resources>

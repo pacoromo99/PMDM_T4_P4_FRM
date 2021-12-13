@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
@@ -22,20 +24,26 @@ public class DialogEspecie extends DialogFragment
         View v = inflater.inflate(R.layout.dialogo_especie, null);
         builder.setView(v);
         especie = v.findViewById(R.id.spEspecies);
-        builder.setTitle("especie Diálogo")
+        builder.setTitle(R.string.titulo3)
                 .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        dialog.dismiss();
-                        listener.guardarEspecie(especie.getSelectedItem().toString());
+                        if(especie.getSelectedItemPosition()!=0) {
+                            dialog.dismiss();
+                            listener.guardarEspecie(especie.getSelectedItem().toString());
+                        }
+                        else
+                            {
+                                Toast.makeText(v.getContext(), "Faltan datos", Toast.LENGTH_SHORT).show();
+                            }
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        listener.cancelar();
+                        listener.cancelarEspecie();
                     }
                 });
         return builder.create();
