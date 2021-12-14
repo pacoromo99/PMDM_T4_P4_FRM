@@ -1,5 +1,7 @@
 package es.studium.pmdm_t4_p4_frm;
 
+import android.widget.Spinner;
+
 public interface Interfaz
 {
     public void guardarNombre(String nombre);

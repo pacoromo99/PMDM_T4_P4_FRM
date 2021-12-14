@@ -1,6 +1,7 @@
 package es.studium.pmdm_t4_p4_frm;
 
-import androidx.annotation.DrawableRes;
+import static es.studium.pmdm_t4_p4_frm.R.drawable.ic_vida;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -10,8 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, Interfaz {
     Button btnAvatar;
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView min1, min2, min3, min4, max1, max2, max3,max4, txtNombre;
     int ruta, ruta2;
 
-    @SuppressLint("WrongConstant")
+    @SuppressLint({"WrongConstant", "ResourceType"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnAvatar.setOnClickListener(this);
         imgAvatar = findViewById(R.id.imgAvatar);
         imgArma = findViewById(R.id.imgArma);
+
         vida = findViewById(R.id.progressBarVida);
         magia = findViewById(R.id.progressBarMagia);
         fuerza = findViewById(R.id.progressBarFuerza);
@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialogSexo.setCancelable(false);
         dialogSexo.show(getSupportFragmentManager(), "Nombre");
         nombre = nombreObtenido;
-        System.out.println(nombre);
     }
 
     public void guardarSexo(String sexoObtenido) {
@@ -81,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialogEspecie.setCancelable(false);
         dialogEspecie.show(getSupportFragmentManager(), "Sexo");
         sexo = sexoObtenido;
-        System.out.println(sexo);
 
     }
 
@@ -90,40 +88,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialogProfesion.setCancelable(false);
         dialogProfesion.show(getSupportFragmentManager(), "Especie");
         especie = especieObtenida;
-        System.out.println(especie);
     }
 
     public void guardarProfesion(String profesionObtenida) {
         profesion = profesionObtenida;
-        System.out.println(profesion);
         crearAvatar();
+        generarAtributos();
         if (nombre.length() != 0 && sexo.length() != 0 && especie.length() != 0 && profesion.length() != 0) {
-            if (profesionObtenida.equals("Arquero@"))
+            if (profesion.equals("Arquero@"))
             {
                 ruta2 = R.drawable.ic_arquero;
             }
-            else if (profesionObtenida.equals("Guerrer@"))
+            else if (profesion.equals("Guerrer@"))
             {
                 ruta2 = R.drawable.ic_guerrero;
             }
-            else if (profesionObtenida.equals("Mag@"))
+            else if (profesion.equals("Mag@"))
             {
                 ruta2 = R.drawable.ic_mago;
             }
-            else if (profesionObtenida.equals("Herrer@"))
+            else if (profesion.equals("Herrer@"))
             {
                 ruta2 = R.drawable.ic_herrero;
             }
-            else if (profesionObtenida.equals("Miner@"))
+            else if (profesion.equals("Miner@")) {
                 ruta2 = R.drawable.ic_minero;
+            }
         }
         imgArma.setImageResource(ruta2);
-        generarAtributos();
+
     }
 
     private void generarAtributos()
     {
-        if (nombre.length() != 0 && sexo.length() != 0 && especie.length() != 0 && profesion.length() != 0) {
+        if (nombre.length() != 0 && sexo.length() != 0 && especie.length() != 0 && profesion.length() != 0)
+        {
+            imgFuerza.setImageResource(R.drawable.ic_fuerza);
+            imgVelocidad.setImageResource(R.drawable.ic_velocidad);
+            imgVida.setImageResource(ic_vida);
+            imgMagia.setImageResource(R.drawable.ic_magia);
+
             int v = (int) (Math.random() * (100 - 0)) + 0;
             int m = (int) (Math.random() * (10 - 0)) + 0;
             int f = (int) (Math.random() * (20 - 0)) + 0;
@@ -133,25 +137,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             magia.setProgress(m);
             fuerza.setProgress(f);
             velocidad.setProgress(ve);
-            imgFuerza.setImageResource(R.drawable.ic_fuerza);
-            imgVelocidad.setImageResource(R.drawable.ic_velocidad);
-            imgVida.setImageResource(R.drawable.ic_corazon);
-            imgMagia.setImageResource(R.drawable.ic_magia);
             txtNombre.setText(nombre);
-
 
             min1.setVisibility(View.VISIBLE);
             min2.setVisibility(View.VISIBLE);
             min3.setVisibility(View.VISIBLE);
             min4.setVisibility(View.VISIBLE);
+
             max1.setVisibility(View.VISIBLE);
             max2.setVisibility(View.VISIBLE);
             max3.setVisibility(View.VISIBLE);
             max4.setVisibility(View.VISIBLE);
+
             vida.setVisibility(View.VISIBLE);
-            magia.setVisibility(View.VISIBLE);
-            fuerza.setVisibility(View.VISIBLE);
             velocidad.setVisibility(View.VISIBLE);
+            fuerza.setVisibility(View.VISIBLE);
+            magia.setVisibility(View.VISIBLE);
             txtNombre.setVisibility(View.VISIBLE);
         }
     }
@@ -185,8 +186,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
     private void crearAvatar() {
-        if (nombre.length() != 0 && sexo.length() != 0 && especie.length() != 0 && profesion.length() != 0) {
-            if (sexo.equals("Hombre") && especie.equals("Elf@")) {
+        if (nombre.length() != 0 && sexo.length() != 0 && especie.length() != 0 && profesion.length() != 0)
+        {
+            if (sexo.equals("Hombre") && especie.equals("Elf@"))
+            {
                 ruta = R.drawable.ic_elfo;
             } else if (sexo.equals("Mujer") && especie.equals("Elf@")) {
                 ruta = R.drawable.ic_elfa;
@@ -201,6 +204,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         imgAvatar.setImageResource(ruta);
-
     }
 }

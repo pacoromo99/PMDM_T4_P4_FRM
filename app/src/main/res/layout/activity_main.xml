@@ -136,22 +136,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.85" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imgVelocidad"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.848" />
+        app:layout_constraintVertical_bias="0.848"/>
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imgFuerza"
         android:layout_width="30dp"
-        android:visibility="gone"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -160,10 +158,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.774" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imgMagia"
         android:layout_width="30dp"
-        android:visibility="gone"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -205,10 +202,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.338" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imgVida"
         android:layout_width="30dp"
-        android:visibility="gone"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
