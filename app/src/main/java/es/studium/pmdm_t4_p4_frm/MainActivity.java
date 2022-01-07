@@ -202,6 +202,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             } else if (sexo.equals("Hombre") && especie.equals("Human@")) {
                 ruta = R.drawable.ic_hombre;
             }
+            else if (sexo.equals("Mujer") && especie.equals("Hobbit"))
+            {
+                ruta = R.drawable.ic_mujerhobit;
+            }
+            else if (sexo.equals("Hombre") && especie.equals("Hobbit")) {
+                ruta = R.drawable.ic_hobbit;
+            }
         }
         imgAvatar.setImageResource(ruta);
     }
